@@ -25,6 +25,9 @@ const Page = ({ title }) => (
       <p>
         <Link to="/settings">Settings</Link>
       </p>
+      <p>
+        <Link to="/contacts">Contacts</Link>
+      </p>
     </div>
 );
 
@@ -40,14 +43,20 @@ const Settings = (props) => (
   <Page title="Settings"/>
 );
 
+const Contacts = (props) => (
+  <Page title="Contacts"/>
+);
+
 class App extends Component {
   render() {
     return (
       <Router history={history}>
         <Switch>
-          <Route exact path="/" component={Home}/>
+          <Route exact path="/dashboard" component={Home}/>
           <Route exact path="/about" component={About}/>
           <Route exact path="/settings" component={Settings}/>
+          <Route exact path="/contacts" component={Contacts}/>
+          <Redirect from="/" to="/dashboard"/>
         </Switch>
       </Router>
     );
