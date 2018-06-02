@@ -19,6 +19,7 @@ const isLocalhost = Boolean(
 );
 
 export default function register() {
+  console.log('Registering sw');
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location);
@@ -65,6 +66,7 @@ function registerValidSW(swUrl) {
               // the fresh content will have been added to the cache.
               // It's the perfect time to display a "New content is
               // available; please refresh." message in your web app.
+              alert('New content is available; please refresh.');
               console.log('New content is available; please refresh.');
             } else {
               // At this point, everything has been precached.
